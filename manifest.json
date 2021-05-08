@@ -1,0 +1,23 @@
+{
+  "name": "Discuss in category (GitHub Discussions)",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "Amends the new disucssion action to target the current category.",
+  "homepage_url": "https://github.com/sudojunior/discuss-in-category-github",
+  "default_locale": "en",
+  "permissions": [
+    "https://github.com/*/*/discussions/categories/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://github.com/*/*/discussions",
+        "https://github.com/*/*/discussions/categories/*"
+      ],
+      "js": [
+        "src/inject.js"
+      ],
+      "run_at": "document_start"
+    }
+  ]
+}
